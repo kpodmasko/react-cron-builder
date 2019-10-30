@@ -101,14 +101,14 @@ export default class CronBuilder extends PureComponent {
               styleNameFactory={styleNameFactory}
               onClick={this.selectTab(1)}
             >
-              Periodically within a time frame
+              Периодически в течение периода времени
             </Tab>
             <Tab
               isActive={activeIndex === 2}
               styleNameFactory={styleNameFactory}
               onClick={this.selectTab(2)}
             >
-              At a recurring fixed time
+              В повторяющееся фиксированное время
             </Tab>
           </legend>
           <Component
@@ -124,7 +124,7 @@ export default class CronBuilder extends PureComponent {
             onClick={this.generateExpression}
             data-action
           >
-            Generate cron expression
+            Генерация выражения cron
           </button>
         </div>
         <If condition={!!generatedExpression && showResult}>

@@ -1,27 +1,35 @@
 // @flow
 
-import {PureComponent} from 'react'
+import { PureComponent } from "react";
 
 const monthOptions = [
-    'January', 'February', 'March', 'April',
-    'May', 'June', 'July', 'August', 'September',
-    'November', 'December'
+  "Январь",
+  "Февраль",
+  "Март",
+  "Апрель",
+  "Май",
+  "Июнь",
+  "Июль",
+  "Август",
+  "Сентябрь",
+  "Ноябрь",
+  "Декабрь"
 ].map((month: string, i: number) => ({
-    label: month,
-    value: String(i + 1)
+  label: month,
+  value: String(i + 1)
 }));
 
 const options = [
-    {
-        label: 'every month',
-        value: '*'
-    }
+  {
+    label: "Каждый месяц",
+    value: "*"
+  }
 ].concat(monthOptions);
 
 export default class Month extends PureComponent {
-    static getOptions() {
-        return options
-    }
+  static getOptions() {
+    return options;
+  }
 
-    static className: string = 'Month';
+  static className: string = "Month";
 }
