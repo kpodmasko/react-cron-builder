@@ -4,7 +4,7 @@ import React, { PureComponent } from "react";
 import BEMHelper from "react-bem-helper";
 import { If, Then } from "react-if";
 import { generateCronExpression, parseCronExpression } from "utils";
-import cronsTrue from "cronstrue";
+import cronsTrue from "cronstrue/i18n";
 import noop from "lodash/noop";
 import Tab from "./components/Tab";
 import PeriodicallyTab from "./components/PeriodicallyTab";
@@ -148,7 +148,7 @@ function PrettyExpression(props: any) {
   const { expression } = props;
   return (
     <div {...styleNameFactory("pretty-expression")}>
-      {cronsTrue.toString(expression)}
+      {cronsTrue.toString(expression, { locale: "ru" })}
     </div>
   );
 }
