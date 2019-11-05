@@ -83,10 +83,13 @@ export default class CronBuilder extends PureComponent {
   };
 
   render() {
-    const { cronExpression, showResult } = this.props;
+    const { cronExpression, showResult, className, style } = this.props;
     const { activeIndex, Component, generatedExpression } = this.state;
+    const styles = styleNameFactory();
+    styles.className += ` ${className || ""}`;
+
     return (
-      <div {...styleNameFactory()}>
+      <div {...styles}>
         <fieldset {...styleNameFactory("fieldset")}>
           <legend {...styleNameFactory("legend")}>
             <Tab
