@@ -86,6 +86,15 @@ export default class CronBuilder extends PureComponent {
     this.generateExpression();
   }
 
+  componentWillReceiveProps(nextProps) {
+    const { cronExpression } = this.props;
+    const { cronExpression: nextCronExpression } = nextProps;
+
+    if (cronExpression !== nextCronExpression) {
+      this.generateExpression();
+    }
+  }
+
   render() {
     const { cronExpression, showResult, className, style } = this.props;
     const { activeIndex, Component, generatedExpression } = this.state;
