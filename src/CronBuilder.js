@@ -51,7 +51,7 @@ export default class CronBuilder extends PureComponent {
     this.state = {
       activeIndex,
       Component: components[activeIndex],
-      generatedExpression: ""
+      generatedExpression: props.cronExpression
     };
   }
 
@@ -81,19 +81,6 @@ export default class CronBuilder extends PureComponent {
       });
     };
   };
-
-  componentDidMount() {
-    this.generateExpression();
-  }
-
-  componentWillReceiveProps(nextProps) {
-    const { cronExpression } = this.props;
-    const { cronExpression: nextCronExpression } = nextProps;
-
-    if (cronExpression !== nextCronExpression) {
-      this.generateExpression();
-    }
-  }
 
   render() {
     const { cronExpression, showResult, className, style } = this.props;
